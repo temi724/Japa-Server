@@ -180,6 +180,7 @@ export const delete_jobs = async_runner(async (req: Request, res: Response) => {
   });
 });
 
+//hello....
 export const delete_user = async_runner(async (req: Request, res: Response) => {
   const { _id } = req.body;
   const delete_one = await Users.deleteOne({ _id });
