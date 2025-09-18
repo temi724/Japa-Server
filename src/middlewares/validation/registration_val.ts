@@ -95,11 +95,6 @@ const validate_jobs = [
     .notEmpty()
     .isString()
     .withMessage("Job title can't be empty"),
-  check("min_salary").isNumeric(),
-
-  check("max_salary").isNumeric(),
-
-  check("skills").isString(),
   check("location").isString(),
   check("job_type")
     .notEmpty()
@@ -109,7 +104,6 @@ const validate_jobs = [
     .notEmpty()
     .isString()
     .withMessage("company name can't be empty"),
-  check("technology").isArray(),
   check("salary_range").optional().isString(),
   check("experience").optional().isString(),
   check("about").optional().isString().withMessage("about has to be string"),
@@ -121,10 +115,6 @@ const validate_jobs = [
     .optional()
     .isString()
     .withMessage("what_we_are_lookin_for has to be string"),
-  check("nice_to_have")
-    .optional()
-    .isString()
-    .withMessage("nice_to_have has to be string"),
   check("category")
     .optional()
     .isString()
@@ -133,7 +123,7 @@ const validate_jobs = [
     .optional()
     .isString()
     .withMessage("ideal_candidate has to be string"),
-  check("link").notEmpty().isString().withMessage("link has to be string"),
+  check("link").optional().isString().withMessage("link has to be string"),
 ];
 export const validate_jobs_edit = [
   check("job_id").notEmpty().isString(),
@@ -141,7 +131,6 @@ export const validate_jobs_edit = [
     .notEmpty()
     .isString()
     .withMessage("Job title can't be empty"),
-  check("skills").notEmpty().isString().withMessage("Skills can't be empty"),
   check("location")
     .notEmpty()
     .isString()
@@ -154,10 +143,6 @@ export const validate_jobs_edit = [
     .notEmpty()
     .isString()
     .withMessage("company name can't be empty"),
-  check("technology")
-    .notEmpty()
-    .isArray()
-    .withMessage("technology can't be empty"),
   check("salary_range")
     .optional()
     .isString()
@@ -175,10 +160,6 @@ export const validate_jobs_edit = [
     .optional()
     .isString()
     .withMessage("what_we_are_lookin_for has to be string"),
-  check("nice_to_have")
-    .optional()
-    .isString()
-    .withMessage("nice_to_have has to be string"),
   check("category")
     .optional()
     .isString()
@@ -187,7 +168,7 @@ export const validate_jobs_edit = [
     .optional()
     .isString()
     .withMessage("ideal_candidate has to be string"),
-  check("link").notEmpty().isString().withMessage("link has to be string"),
+  check("link").optional().isString().withMessage("link has to be string"),
 ];
 export const validate_search = [
   query("title").optional().isString().withMessage("must be string"),
@@ -198,7 +179,6 @@ export const validate_search = [
     .isString()
     .withMessage("location must be string"),
   query("limit").optional().isNumeric().withMessage("Must be number"),
-  query("technology").optional().isString().withMessage("Must be number"),
 ];
 export const validate_user_search = [
   query("name").optional().isString().withMessage("name must be string"),
