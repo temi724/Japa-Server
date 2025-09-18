@@ -180,6 +180,14 @@ export const delete_jobs = async_runner(async (req: Request, res: Response) => {
   });
 });
 
+export const delete_user = async_runner(async (req: Request, res: Response) => {
+  const { _id } = req.body;
+  const delete_one = await Users.deleteOne({ _id });
+  return res.json({
+    message: delete_one ? "User deleted successfully" : "Failed to delete user, please retry",
+  });
+});
+
 export const post_job_category = async_runner(
   async (req: Request, res: Response) => {
     const { name } = req.body;

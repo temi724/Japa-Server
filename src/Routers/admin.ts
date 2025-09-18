@@ -23,6 +23,7 @@ import {
   edit_jobs,
   talent_list,
   delete_jobs,
+  delete_user,
   list_job_type,
   list_job_cats,
   post_technology,
@@ -53,6 +54,7 @@ export default (router: express.Router) => {
     edit_jobs
   );
   router.delete("/admin/deletejobs", admin_check, delete_jobs);
+  router.delete("/admin/deleteuser", admin_check, delete_user);
   router.post("/admin/postjobcategory", admin_check, post_job_category);
   router.post("/admin/postjobtype", admin_check, post_job_type);
   router.post("/admin/posttechnology", admin_check, post_technology);
